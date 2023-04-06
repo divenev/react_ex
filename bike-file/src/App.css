@@ -143,7 +143,7 @@ form img {
 section img {
   display: flex;
   height: 150px;
-  margin: auto;
+  margin: 8px auto;
   align-items: center;
   justify-content: center;
 }
@@ -158,6 +158,9 @@ section img {
     rgba(255, 255, 255, 0.08),
     rgb(255, 255, 255, 0.08)
   );
+  text-decoration: none;
+  margin: 8px;
+  padding: 8px;
 }
 
 .button:hover {

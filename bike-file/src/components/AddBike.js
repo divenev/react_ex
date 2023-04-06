@@ -23,7 +23,7 @@ export const AddBike = () => {
 
     return (
         <>
-            <form className="form" id="login" onSubmit={onSubmit}>
+            <form className="form" id="create" onSubmit={onSubmit}>
                 <input type="text" name="brand" value={values.brand} onChange={changeHandler} placeholder="Brand"></input>
                 <input type="text" name="category" value={values.category} onChange={changeHandler} placeholder="Category"></input>
                 <input type="text" name="frameNumber" value={values.frameNumber} onChange={changeHandler} placeholder="Frame Number"></input>

@@ -6,5 +6,9 @@ export const useForm = (initialValues) => {
         setForm(state => ({...state, [e.target.name]:[e.target.value]}))
     }
 
-    return {values, changeHandler}
+    const changeValue = (value) => {
+        setForm(value)
+    } 
+
+    return {values, changeHandler, changeValue}
 };

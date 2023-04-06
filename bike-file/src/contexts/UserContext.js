@@ -3,7 +3,7 @@ import { useLocalStorage } from "../hooks/useLocalStorage";
 
 export const UserContext = createContext();
 
-export const UserProvider = ({ children }) => {
+export const UserProvider = ({children}) => {
   const [userLocalState] = useLocalStorage();
 
   const [user, setUser] = useState(() => {
@@ -11,7 +11,7 @@ export const UserProvider = ({ children }) => {
   });
 
   const updateUser = (value) => {
-    setUser({ ...value });
+    setUser(value);
   };
 
   const context = {
