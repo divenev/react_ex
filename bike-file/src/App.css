@@ -172,6 +172,18 @@ section img {
   transition: 500ms;
 }
 
+.button_del {
+  font-size: 26px;
+}
+
+.button_no_del {
+  font-size: 26px;
+}
+
+.button_del:hover {
+  color: darkred;
+}
+
 @media (max-width: 800px) {
   header {
     align-items: start;

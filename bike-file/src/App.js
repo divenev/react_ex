@@ -13,6 +13,7 @@ import { Check } from "./components/Check";
 import { AddBike } from "./components/AddBike";
 import { MyBike } from "./components/MyBike";
 import { EditBike } from "./components/EditBike";
+import { DeleteBike } from "./components/DeleteBike";
 
 function App() {
   return (
@@ -29,7 +30,8 @@ function App() {
               <Route path="/users/logout" element={<Logout />} />
               <Route path="/bike/add" element={<AddBike />} />
               <Route path="/bike/my" element={<MyBike />} />
-              <Route path="/bike/:IdBike" element={<EditBike />} />
+              <Route path="/bike/edit/:IdBike" element={<EditBike />} />
+              <Route path="/bike/delete/:IdBike" element={<DeleteBike />} />
             </Routes>
           </main>
           <Footer />

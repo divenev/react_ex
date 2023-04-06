@@ -15,7 +15,7 @@ export const Check = () => {
 
   return (
     <>
-      <form className="form" id="login" onSubmit={onSubmit}>
+      <form className="form" onSubmit={onSubmit}>
         <input
           type="frame_number"
           name="frame_number"

@@ -33,8 +33,6 @@ export const EditBike = () => {
     }
   }, [IdBike, bike, changeValue]);
 
-  console.log(bike && bike._id);
-
   const navigate = useNavigate();
 
   const onSubmit = async (e) => {
