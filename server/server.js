@@ -1340,7 +1340,7 @@
                 "category": "MTB",
                 "frameNumber": "12345",
                 "status": "for sale",
-                "imageUrl": "/images/CoverFire.png",
+                "imageUrl": "https://www.technopolis.bg/medias/sys_master/h4c/hd9/11456335937566.jpg",
                 "description": "My bike",
                 "_createdOn": 1617194128618,
             },
@@ -1360,7 +1360,7 @@
                 "category": "MTB",
                 "frameNumber": "12354",
                 "status": "stolen",
-                "imageUrl": "/images/ZombieLang.png",
+                "imageUrl": "https://cdn.media.halfords.com/i/washford/446110/Carrera-Vengeance-E-Mens-Electric-Mountain-Bike-2.0---18-20-Frames?fmt=auto&qlt=default&$sfcc_tile$&w=680",
                 "description": "New bike",
                 "_createdOn": 1617194295474,
             }
