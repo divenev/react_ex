@@ -1,6 +1,6 @@
 import { requestServer } from "./requestServer";
 
-export const EditBikeService = async (e, IdBike) => {
+export const editBikeService = async (e, IdBike) => {
   e.preventDefault();
   const data = Object.fromEntries(new FormData(e.target));
 

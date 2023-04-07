@@ -1,8 +1,8 @@
 import { useNavigate, useParams } from "react-router-dom";
 import { BikeContext } from "../contexts/BikeContext";
 import { useContext, useEffect, useState } from "react";
-import { GetBikeService } from "../services/getBikeService";
-import { DelBikeService } from "../services/delBikeService";
+import { getBikeService } from "../services/getBikeService";
+import { delBikeService } from "../services/delBikeService";
 
 export const DeleteBike = () => {
   const { IdBike } = useParams();
@@ -13,7 +13,7 @@ export const DeleteBike = () => {
 
   useEffect(() => {
     if (!bike) {
-      GetBikeService(IdBike).then((b) => {
+      getBikeService(IdBike).then((b) => {
         setBikeS(b);
       });
     }
@@ -22,7 +22,7 @@ export const DeleteBike = () => {
   const navigate = useNavigate();
 
   const onSubmit = async () => {
-    await DelBikeService(IdBike);
+    await delBikeService(IdBike);
     navigate("/bike/my");
   };
 

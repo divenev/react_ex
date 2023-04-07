@@ -1,6 +1,6 @@
 import { Link, useNavigate } from 'react-router-dom';
 import { useForm } from '../hooks/useForm';
-import { RegisterUser } from '../services/registerUser';
+import { registerUser } from '../services/registerUser';
 import { useContext } from 'react';
 import { UserContext } from '../contexts/UserContext';
 
@@ -18,7 +18,7 @@ export const Register = () => {
 
     const onSubmit = async (e) => {
         try {
-            const result = await RegisterUser(e)
+            const result = await registerUser(e)
             if (result.hasOwnProperty('accessToken')) {
                 setUser(result)
                 updateUser(result)

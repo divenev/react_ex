@@ -1,5 +1,5 @@
 import { useContext, useEffect } from "react";
-import { LogoutUser } from "../services/logoutUser";
+import { logoutUser } from "../services/logoutUser";
 import { useNavigate } from "react-router-dom";
 import { UserContext } from "../contexts/UserContext";
 
@@ -8,7 +8,7 @@ export const Logout = () => {
   const { updateUser } = useContext(UserContext);
 
   useEffect(() => {
-    LogoutUser();
+    logoutUser();
     localStorage.removeItem("userData");
     updateUser();
     navigate("/");

@@ -1,6 +1,6 @@
 import { requestServer } from './requestServer';
 
-export const RegisterUser = async (e) => {
+export const registerUser = async (e) => {
     e.preventDefault()
     const data = Object.fromEntries(new FormData(e.target))
     

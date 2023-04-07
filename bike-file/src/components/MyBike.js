@@ -35,6 +35,11 @@ export const MyBike = () => {
               <p>FrameNumber: </p>
               <p><b>{b.frameNumber}</b></p>
               <img className="image" src={b.imageUrl} alt="No img" />
+              <p>
+              <Link to={`/bike/message/${b._id}`} className="button">
+                Message
+              </Link>
+              </p>
               <Link to={`/bike/edit/${b._id}`} className="button">
                 Edit
               </Link>

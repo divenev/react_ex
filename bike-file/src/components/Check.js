@@ -1,23 +1,34 @@
 import { useState } from "react";
 import { useForm } from "../hooks/useForm";
-import { checkBike } from "../services/checkBike";
+import { checkBikeService } from "../services/checkBikeServise";
+import { useContext } from "react";
+import { UserContext } from "../contexts/UserContext";
+import { sendMessageService } from "../services/sendMessageService";
 
 export const Check = () => {
+  const { user } = useContext(UserContext);
   const [bike, setBike] = useState();
+  const [message, setMessage] = useState();
   const { values, changeHandler } = useForm({
     frame_number: "",
+    messageForOwner: "",
   });
 
   const onSubmit = async (e) => {
-    const result = await checkBike(e);
+    const result = await checkBikeService(e);
     setBike(result);
+  };
+
+  const sendMessage = async (e) => {
+    const result = await sendMessageService(e, user, bike[0]);
+    setMessage(result);
   };
 
   return (
     <>
       <form className="form" onSubmit={onSubmit}>
         <input
-          type="frame_number"
+          type="text"
           name="frame_number"
           value={values.frame_number}
           onChange={changeHandler}
@@ -42,6 +53,28 @@ export const Check = () => {
         )}
         {bike && bike.length === 0 && <p>Not found</p>}
       </form>
+      {!message && bike && bike.length !== 0 && user && user.hasOwnProperty("email") && (
+        <>
+          <form className="form" onSubmit={sendMessage}>
+            <textarea
+              type="text"
+              name="messageForOwner"
+              value={values.message}
+              onChange={changeHandler}
+              placeholder="Мessage to the owner"
+            ></textarea>
+            <button type="submit" className="button" value="Send message">
+              Send the message
+            </button>
+            {message && <>Send the message</>}
+          </form>
+        </>
+      )}
+      {message && (
+        <form className="form">
+          <p>Send the message</p>
+        </form>
+      )}
     </>
   );
 };

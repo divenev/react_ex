@@ -3,8 +3,8 @@ import { useForm } from "../hooks/useForm";
 
 import { BikeContext } from "../contexts/BikeContext";
 import { useContext, useEffect, useState } from "react";
-import { EditBikeService } from "../services/editBikeService";
-import { GetBikeService } from "../services/getBikeService";
+import { editBikeService } from "../services/editBikeService";
+import { getBikeService } from "../services/getBikeService";
 
 export const EditBike = () => {
   const { IdBike } = useParams();
@@ -26,7 +26,7 @@ export const EditBike = () => {
 
   useEffect(() => {
     if (!bike) {
-      GetBikeService(IdBike).then((b) => {
+      getBikeService(IdBike).then((b) => {
         setBikeS(b);
         changeValue(b);
       });
@@ -36,7 +36,7 @@ export const EditBike = () => {
   const navigate = useNavigate();
 
   const onSubmit = async (e) => {
-    await EditBikeService(e, IdBike);
+    await editBikeService(e, IdBike);
     navigate("/bike/my");
   };
 
@@ -69,7 +69,7 @@ export const EditBike = () => {
           <option value="stolen">Stolen</option>
         </select>
         <input
-          type="text"
+          type="url"
           name="imageUrl"
           value={values.imageUrl}
           onChange={changeHandler}

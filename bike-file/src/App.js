@@ -14,6 +14,7 @@ import { AddBike } from "./components/AddBike";
 import { MyBike } from "./components/MyBike";
 import { EditBike } from "./components/EditBike";
 import { DeleteBike } from "./components/DeleteBike";
+import { MessageBike } from "./components/MessageBike";
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
               <Route path="/bike/my" element={<MyBike />} />
               <Route path="/bike/edit/:IdBike" element={<EditBike />} />
               <Route path="/bike/delete/:IdBike" element={<DeleteBike />} />
+              <Route path="/bike/message/:IdBike" element={<MessageBike />} />
             </Routes>
           </main>
           <Footer />

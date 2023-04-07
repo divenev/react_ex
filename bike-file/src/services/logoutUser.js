@@ -1,6 +1,6 @@
 import { requestServer } from "./requestServer";
 
-export const LogoutUser = async () => {
+export const logoutUser = async () => {
   const result = await requestServer(`/users/logout`, "POST");
   return result;
 };

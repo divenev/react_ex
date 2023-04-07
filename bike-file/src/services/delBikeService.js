@@ -1,7 +1,6 @@
 import { requestServer } from "./requestServer";
 
-export const DelBikeService = async (IdBike) => {
+export const delBikeService = async (IdBike) => {
   const result = await requestServer(`/data/bikes/${IdBike}`, "DELETE");
-  console.log(result);
   return result;
 };

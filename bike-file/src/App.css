@@ -99,6 +99,16 @@ main > * {
   padding: 8px;
 }
 
+.message {
+  margin: 6px;
+  border: 2px solid darkblue;
+  border-radius: 8px;
+}
+
+.message p {
+  margin: 2px;
+}
+
 footer {
   text-align: center;
   font-size: 20px;
@@ -134,6 +144,10 @@ footer {
   margin: 0px;
   padding: 0px;
   text-align: center;
+}
+
+.form textarea {
+  text-align: left;
 }
 
 form img {

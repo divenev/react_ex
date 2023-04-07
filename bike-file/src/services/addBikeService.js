@@ -1,6 +1,6 @@
 import { requestServer } from './requestServer';
 
-export const AddBikeService = async (e) => {
+export const addBikeService = async (e) => {
     e.preventDefault()
     const data = Object.fromEntries(new FormData(e.target))
 

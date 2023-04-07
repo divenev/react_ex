@@ -1,6 +1,6 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "../hooks/useForm";
-import { LoginUser } from "../services/loginUser";
+import { loginUser } from "../services/loginUser";
 import { useContext } from "react";
 import { UserContext } from "../contexts/UserContext";
 
@@ -16,7 +16,7 @@ export const Login = () => {
 
   const onSubmit = async (e) => {
     try {
-      const result = await LoginUser(e);
+      const result = await loginUser(e);
       if (result.hasOwnProperty("accessToken")) {
         setUser(result);
         updateUser(result);
