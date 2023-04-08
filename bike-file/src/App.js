@@ -15,6 +15,7 @@ import { MyBike } from "./components/MyBike";
 import { EditBike } from "./components/EditBike";
 import { DeleteBike } from "./components/DeleteBike";
 import { MessageBike } from "./components/MessageBike";
+import { RouteGuard } from "./functions/RouteGuard";
 
 function App() {
   return (
@@ -28,12 +29,14 @@ function App() {
               <Route path="/check" element={<Check />} />
               <Route path="/users/login" element={<Login />} />
               <Route path="/users/register" element={<Register />} />
-              <Route path="/users/logout" element={<Logout />} />
-              <Route path="/bike/add" element={<AddBike />} />
-              <Route path="/bike/my" element={<MyBike />} />
-              <Route path="/bike/edit/:IdBike" element={<EditBike />} />
-              <Route path="/bike/delete/:IdBike" element={<DeleteBike />} />
-              <Route path="/bike/message/:IdBike" element={<MessageBike />} />
+              <Route element={<RouteGuard />}>
+                <Route path="/users/logout" element={<Logout />} />
+                <Route path="/bike/add" element={<AddBike />} />
+                <Route path="/bike/my" element={<MyBike />} />
+                <Route path="/bike/edit/:IdBike" element={<EditBike />} />
+                <Route path="/bike/delete/:IdBike" element={<DeleteBike />} />
+                <Route path="/bike/message/:IdBike" element={<MessageBike />} />
+              </Route>
             </Routes>
           </main>
           <Footer />
