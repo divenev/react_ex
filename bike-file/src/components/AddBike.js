@@ -16,7 +16,7 @@ export const AddBike = () => {
     const onSubmit = async (e) => {
         await addBikeService(e)
         // my bike
-        navigate('/')
+        navigate('/bike/my')
     }
 
 
